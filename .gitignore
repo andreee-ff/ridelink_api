@@ -1,0 +1,12 @@
+# Don't track virtual environments
+venv/
+
+# Don't track Python cache files
+__pycache__/
+*.pyc
+
+# Don't track local environment config
+.env
+
+# Don't track database file (SQLite)
+*.db
