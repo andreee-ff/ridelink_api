@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from app.database import SessionLocal
 from app.schemas import UserCreate, UserRead, Token
 from app.models import User
-from app.auth import hash_password, create_access_token, verify_password
+from app.auth import hash_password, create_access_token, verify_password, get_current_user
 
 router = APIRouter(
     prefix="/auth",
@@ -56,3 +56,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
 def get_users_count(db: Session = Depends(get_db)):
     count = db.query(User).count()
     return {"count": count}
+
+@router.get("/me", response_model=UserRead)
+def read_current_user(current_user: User = Depends(get_current_user)):
+    return current_user
