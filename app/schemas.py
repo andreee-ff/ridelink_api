@@ -16,5 +16,16 @@ class UserRead(BaseModel):
 
     class Config:
         orm_mode = True
-
     
+class LocationCreate(BaseModel):
+    latitude: float
+    longitude: float
+
+class LocationRead(BaseModel):
+    id: int
+    latitude: float
+    longitude: float
+    timestamp: datetime
+
+    class Config:
+        orm_mode = True
