@@ -4,7 +4,6 @@ from app.schemas import LocationCreate, LocationRead
 from app.models import Location, User
 from app.auth import get_current_user, get_db
 
-from app.utils import habersine
 from sqlalchemy import desc
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -73,15 +72,4 @@ def get_group_status(db: Session = Depends(get_db)):
         "distance_meters": round(max_distance, 2),
         "timestamp_front":  front_user.timestamp,
         "timestamp_back": back_user.timestamp
-        }
-
-
-
-
-
-
-
-
-
-
-
+    } 

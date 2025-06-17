@@ -1,4 +1,4 @@
-from auth import hash_password, verify_password
+from app.auth import hash_password, verify_password
 
 plain = "mysecretpassword"
 hashed = hash_password(plain)

@@ -3,7 +3,7 @@ from math import radians, sin, cos, sqrt, atan2
 # Later 'geopy' could be used for this
 # Now we're using the haversine formula with zero overhead
 
-def habersine(lat1, lon1, lat2, lon2):
+def haversine(lat1, lon1, lat2, lon2):
     # Radius of the Earth in meters
     R = 6371000 
 
