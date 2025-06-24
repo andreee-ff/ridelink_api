@@ -23,6 +23,7 @@ class LocationCreate(BaseModel):
 
 class LocationRead(BaseModel):
     id: int
+    user_id: int
     latitude: float
     longitude: float
     timestamp: datetime
